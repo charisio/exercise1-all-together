@@ -48,7 +48,8 @@ class App extends Component {
 				</header>
 				<NewUserForm onAddUser={this.addUserHandler} errorMsg={errorMsg}/>
 				<UserList users={users} showGamesPlayed={showGamesPlayed}/>
-				<ToggleGamesButton showGamesPlayed={showGamesPlayed} toggleGamesPlayed={this.toggleGamesPlayedHandler}/>
+				{users.length ? 
+                 <ToggleGamesButton showGamesPlayed={showGamesPlayed} toggleGamesPlayed={this.toggleGamesPlayedHandler}/> : '' }
 			</div>
 		);
 	}

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const UserListLitem = ({users, showGamesPlayed}) => {
 	return(
@@ -8,6 +9,11 @@ const UserListLitem = ({users, showGamesPlayed}) => {
              )}
       	</ol>
 	);
+}
+
+UserListLitem.propTypes = {
+	users: PropTypes.arrayOf(PropTypes.object).isRequired,
+	showGamesPlayed: PropTypes.bool.isRequired,
 }
 
 export default UserListLitem;

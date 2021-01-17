@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import UserListItem from './UserListItem';
 
-class UserList extends Component {
-	render() {
-      	const {users, showGamesPlayed} = this.props;
-		return(
-          <div className='user-list'>
-			<div className='user-games'>
-				<h1>User Games</h1>
-				<UserListItem users={users} showGamesPlayed={showGamesPlayed}/>
-			</div>
-          </div>
-        );
-    }
+const UserList = ({users, showGamesPlayed}) => {
+  return(
+    <div className='user-list'>
+    	<h1>User Games</h1>
+    	<UserListItem users={users} showGamesPlayed={showGamesPlayed}/>
+	</div>
+  );
+}
+
+UserList.propTypes = {
+	users: PropTypes.arrayOf(PropTypes.object).isRequired,
+	showGamesPlayed: PropTypes.bool.isRequired,
 }
 
 export default UserList;

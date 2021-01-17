@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NewUserForm extends Component {
   	state = {
@@ -52,6 +53,11 @@ class NewUserForm extends Component {
           	</div>
         );
     }
+}
+
+NewUserForm.propTypes = {
+	onAddUser: PropTypes.func.isRequired,
+	errorMsg: PropTypes.string.isRequired,
 }
 
 export default NewUserForm;
